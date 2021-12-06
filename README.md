@@ -29,6 +29,8 @@ There are various goals required to “win” the game. The primary goal of the 
 1. [Project Proposal](https://docs.google.com/document/d/1rsH7jm487dvGhBH1pjfRIxznr1u2ky4cdERGmwQGWoc/edit) on Google Drive
 2. [Painting Game Miro Board](https://miro.com/app/board/uXjVOeEMkCg=/)
 3. Storyboarding, Sketches, etc
+4. [ZapSplat Sounds](https://www.zapsplat.com/sound-effect-categories/)
+5. [DovaS Sounds](https://dova-s.jp/)
 
 ## License
 
