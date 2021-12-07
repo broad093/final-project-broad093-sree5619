@@ -5,7 +5,7 @@
 
 Name: Temay Broadway & Sree Pemma
 
-UMN Email: broad093@umn.edu // pemma03@umn.edu
+UMN Email: broad093@umn.edu // pemma003@umn.edu
 
 Third Party Assets:
 -  
@@ -21,7 +21,7 @@ This is the part when the floor will give in and the player will feel like they 
 
 ## Goals
 
-There are various goals required to ìwinî the game. The primary goal of the game is to paint your surroundings so that objects can be interacted with. Once objects can be interacted with, the player can use their surroundings to help progress in the game. Other mechanics in the game that will help the player towards their goal is collecting colors, collecting objects to help with their journey, and defeating monsters.
+There are various goals required to ‚Äúwin‚Äù the game. The primary goal of the game is to paint your surroundings so that objects can be interacted with. Once objects can be interacted with, the player can use their surroundings to help progress in the game. Other mechanics in the game that will help the player towards their goal is collecting colors, collecting objects to help with their journey, and defeating monsters.
 
 
 ## Project Planning
@@ -29,6 +29,8 @@ There are various goals required to ìwinî the game. The primary goal of the game
 1. [Project Proposal](https://docs.google.com/document/d/1rsH7jm487dvGhBH1pjfRIxznr1u2ky4cdERGmwQGWoc/edit) on Google Drive
 2. [Painting Game Miro Board](https://miro.com/app/board/uXjVOeEMkCg=/)
 3. Storyboarding, Sketches, etc
+4. [ZapSplat Sounds](https://www.zapsplat.com/sound-effect-categories/)
+5. [DovaS Sounds](https://dova-s.jp/)
 
 ## License
 
