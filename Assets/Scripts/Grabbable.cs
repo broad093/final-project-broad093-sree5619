@@ -1,5 +1,5 @@
 using UnityEngine;
-public class Grabbable : InventoryTools
+public class Grabbable : MonoBehaviour
 {
     private Grabber currentGrabber;
 

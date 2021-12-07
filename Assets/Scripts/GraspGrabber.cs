@@ -15,6 +15,7 @@ public class GraspGrabber : Grabber
     Grabbable currentObject;
     Grabbable grabbedObject;
     Grabbable currentTool;
+    bool equipped;
 
     public float distance;
     public float contrMovement;
@@ -25,6 +26,7 @@ public class GraspGrabber : Grabber
     void Start()
     {
         buttonPress = false;
+        equipped = false;
 
         grabbedObject = null;
         currentObject = null;
@@ -74,6 +76,7 @@ public class GraspGrabber : Grabber
                 currentTool.transform.parent = this.transform;
                 currentTool.GetComponent<InventoryTools>().SetCurrentTool(currentTool);
                 grabbedObject = null;
+                equipped = true;
             }
             grabbedObject.transform.parent = this.transform;
 
@@ -95,12 +98,13 @@ public class GraspGrabber : Grabber
             grabbedObject.transform.parent = null;
             grabbedObject = null;
         }
-        else if (currentTool)
+        else if (equipped)
         {
             // WORKS
             currentTool.transform.parent = this.transform;
             currentTool.GetComponent<InventoryTools>().SetToolPosition(currentTool);
-            currentTool.GetComponent<InventoryTools>().SetEquipped(true);
+            equipped = false;
+            //currentTool.GetComponent<InventoryTools>().SetEquipped(true);
         }
     }
 

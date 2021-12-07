@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InventoryTools : InventoryBag
 {
-    [Header("Currently Equipped Tool")]
     private Grabbable currentTool;
     GameObject thisTool;
 
