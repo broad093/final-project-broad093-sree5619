@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class InventoryTools : InventoryBag
 {
     private Grabbable currentTool;
     GameObject thisTool;
+
+    public GameObject lContr;
+    public GameObject rContr;
 
     private bool inInventory;
     private bool equipped;
@@ -13,6 +17,10 @@ public class InventoryTools : InventoryBag
     // Start is called before the first frame update
     void Start()
     {
+        lContr.GetComponent<Brush>().enabled = false;
+        lContr.GetComponent<LineRenderer>().enabled = false;
+        rContr.GetComponent<Brush>().enabled = false;
+        rContr.GetComponent<LineRenderer>().enabled = false;
         inInventory = false;
         equipped = false;
     }
@@ -20,13 +28,13 @@ public class InventoryTools : InventoryBag
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void SetCurrentTool(Grabbable tool)
     {
         currentTool = tool;
         equipped = true;
+        thisTool = tool.GetComponent<Rigidbody>().gameObject;
         if (!inInventory)
         {
             AddToInventory(currentTool);
@@ -47,6 +55,7 @@ public class InventoryTools : InventoryBag
         {
             thisTool.transform.localPosition = new Vector3(0f, 0.15f, 0.15f);
             thisTool.transform.localRotation = Quaternion.Euler(-45, 0, 0);
+            HoldingBrush();
         }
     }
 
@@ -68,5 +77,33 @@ public class InventoryTools : InventoryBag
     public bool isEquipped()
     {
         return equipped;
+    }
+
+    // Check which hand the brush is in and disable the line renderer and brush script in other if it's not currently held
+    void HoldingBrush()
+    {
+        if (thisTool.transform.IsChildOf(rContr.transform))
+        {
+            print("works right");
+            rContr.GetComponent<Brush>().enabled = true;
+            rContr.GetComponent<LineRenderer>().enabled = true;
+            lContr.GetComponent<Brush>().enabled = false;
+            lContr.GetComponent<LineRenderer>().enabled = false;
+        }
+        else if (thisTool.transform.IsChildOf(lContr.transform))
+        {
+            print("works left");
+            lContr.GetComponent<Brush>().enabled = true;
+            lContr.GetComponent<LineRenderer>().enabled = true;
+            rContr.GetComponent<Brush>().enabled = false;
+            rContr.GetComponent<LineRenderer>().enabled = false;
+        }
+        else
+        {
+            lContr.GetComponent<Brush>().enabled = false;
+            lContr.GetComponent<LineRenderer>().enabled = false;
+            rContr.GetComponent<Brush>().enabled = false;
+            rContr.GetComponent<LineRenderer>().enabled = false;
+        }
     }
 }

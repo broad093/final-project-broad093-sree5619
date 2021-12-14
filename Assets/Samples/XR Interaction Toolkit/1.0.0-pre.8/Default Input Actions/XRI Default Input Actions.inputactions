@@ -154,6 +154,22 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Primary Button",
+                    "type": "Button",
+                    "id": "67eb8e6c-b809-4304-90f9-881a7e690ddd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Primary Touch",
+                    "type": "Button",
+                    "id": "5d61e698-d532-4f6d-ba48-25486d16915f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -475,6 +491,28 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "11deed56-cfd8-4776-a433-6094e3a66bc2",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Primary Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b966e41e-49d9-482e-96f6-2a8b163058ba",
+                    "path": "<XRController>{LeftHand}/primaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Primary Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -583,6 +621,22 @@
                     "type": "Value",
                     "id": "6f7cf253-7062-443b-b10f-2be48a33f027",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Primary Button",
+                    "type": "Button",
+                    "id": "2e950909-580d-4605-be95-5ad1005d7c14",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Primary Touch",
+                    "type": "Button",
+                    "id": "79a914d5-9125-4519-9a4a-f776495b9c78",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -895,6 +949,39 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "059cfbfd-e283-42c9-9371-94ab5add95a5",
+                    "path": "<XRController>{RightHand}/joystick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fbb77c37-37db-42bc-9ef3-cd10533bf6fa",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Primary Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21447825-9146-45f9-8b6c-9803869fe87f",
+                    "path": "<XRController>{RightHand}/primaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Primary Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
