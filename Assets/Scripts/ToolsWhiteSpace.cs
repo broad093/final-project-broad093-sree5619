@@ -11,6 +11,8 @@ public class ToolsWhiteSpace : InventoryBag
     private bool inInventory;
     private bool equipped;
 
+    InventoryBag inventory;
+
     // Start is called before the first frame update
     void Start()
     {

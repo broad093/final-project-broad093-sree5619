@@ -7,8 +7,6 @@ public class GraspGrabber : Grabber
 
     public InputActionProperty grabAction;
 
-    public Vector3 leftContr;
-    public Vector3 rightContr;
     public Vector3 point;
     public Vector3 controllerPos;
 
@@ -41,12 +39,6 @@ public class GraspGrabber : Grabber
 
         grabAction.action.performed -= Grab;
         grabAction.action.canceled -= Release;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 
@@ -98,13 +90,29 @@ public class GraspGrabber : Grabber
             grabbedObject.transform.parent = null;
             grabbedObject = null;
         }
+
+        // Locks the position of the brush into the controller's position so that one can use it without
+        // continously holding the grab button. Disables the mesh render of the controller holding the brush.
         else if (equipped)
         {
-            // WORKS
             currentTool.transform.parent = this.transform;
             currentTool.GetComponent<InventoryTools>().SetToolPosition(currentTool);
+            this.gameObject.transform.Find("controller_ply").GetComponent<Renderer>().enabled = false;
+
+            // Checks which hand is holding the brush and makes sure that the opposite hand's controller mesh is showing.
+            if (this.gameObject.CompareTag("RightHand"))
+            {
+                GameObject other = GameObject.FindWithTag("LeftHand");
+                other.transform.Find("controller_ply").GetComponent<Renderer>().enabled = true;
+            }
+            else if (this.gameObject.CompareTag("LeftHand"))
+            {
+                GameObject other = GameObject.FindWithTag("RightHand");
+                other.transform.Find("controller_ply").GetComponent<Renderer>().enabled = true;
+            }
+
+            // Set to false so that you can change which hand is holding the brush
             equipped = false;
-            //currentTool.GetComponent<InventoryTools>().SetEquipped(true);
         }
     }
 

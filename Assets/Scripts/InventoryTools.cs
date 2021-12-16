@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 
 public class InventoryTools : InventoryBag
@@ -8,8 +10,8 @@ public class InventoryTools : InventoryBag
     private Grabbable currentTool;
     GameObject thisTool;
 
-    public GameObject lContr;
-    public GameObject rContr;
+    public Brush lContrBrush;
+    public Brush rContrBrush;
 
     private bool inInventory;
     private bool equipped;
@@ -17,11 +19,9 @@ public class InventoryTools : InventoryBag
     // Start is called before the first frame update
     void Start()
     {
-        lContr.GetComponent<Brush>().enabled = false;
-        lContr.GetComponent<LineRenderer>().enabled = false;
-        rContr.GetComponent<Brush>().enabled = false;
-        rContr.GetComponent<LineRenderer>().enabled = false;
-        inInventory = false;
+
+        HoldingBrush();
+        inInventory = true;
         equipped = false;
     }
 
@@ -69,7 +69,7 @@ public class InventoryTools : InventoryBag
         return inInventory;
     }
 
-   public void SetEquipped(bool equip)
+    public void SetEquipped(bool equip)
     {
         equipped = equip;
     }
@@ -82,28 +82,52 @@ public class InventoryTools : InventoryBag
     // Check which hand the brush is in and disable the line renderer and brush script in other if it's not currently held
     void HoldingBrush()
     {
+        GameObject rContr = GameObject.Find("RightHand Controller");
+        GameObject lContr = GameObject.Find("LeftHand Controller");
+        GameObject brush = GameObject.FindGameObjectWithTag("Brush");
+
+        lContrBrush.paintAction.action.performed -= lContrBrush.Paint;
+        lContrBrush.paintAction.action.canceled -= lContrBrush.NoPaint;
+        lContrBrush.primaryTouch.action.performed -= lContrBrush.TouchDown;
+        lContrBrush.primaryTouch.action.canceled -= lContrBrush.TouchUp;
+
+        rContrBrush.paintAction.action.performed -= rContrBrush.Paint;
+        rContrBrush.paintAction.action.canceled -= rContrBrush.NoPaint;
+        rContrBrush.primaryTouch.action.performed -= rContrBrush.TouchDown;
+        rContrBrush.primaryTouch.action.canceled -= rContrBrush.TouchUp;
+
+        if (brush.transform.IsChildOf(rContr.transform) || brush.transform.IsChildOf(lContr.transform))
+        {
+            SetCurrentTool(brush.GetComponent<Grabbable>());
+        }
+
         if (thisTool.transform.IsChildOf(rContr.transform))
         {
-            print("works right");
-            rContr.GetComponent<Brush>().enabled = true;
-            rContr.GetComponent<LineRenderer>().enabled = true;
-            lContr.GetComponent<Brush>().enabled = false;
-            lContr.GetComponent<LineRenderer>().enabled = false;
+            rContrBrush.paintAction.action.performed += rContrBrush.Paint;
+            rContrBrush.paintAction.action.canceled += rContrBrush.NoPaint;
+            rContrBrush.primaryTouch.action.performed += rContrBrush.TouchDown;
+            rContrBrush.primaryTouch.action.canceled += rContrBrush.TouchUp;
+            rContrBrush.paintAction.action.Enable();
+
+            lContrBrush.paintAction.action.performed -= lContrBrush.Paint;
+            lContrBrush.paintAction.action.canceled -= lContrBrush.NoPaint;
+            lContrBrush.primaryTouch.action.performed -= lContrBrush.TouchDown;
+            lContrBrush.primaryTouch.action.canceled -= lContrBrush.TouchUp;
+            lContrBrush.paintAction.action.Disable();
         }
         else if (thisTool.transform.IsChildOf(lContr.transform))
         {
-            print("works left");
-            lContr.GetComponent<Brush>().enabled = true;
-            lContr.GetComponent<LineRenderer>().enabled = true;
-            rContr.GetComponent<Brush>().enabled = false;
-            rContr.GetComponent<LineRenderer>().enabled = false;
-        }
-        else
-        {
-            lContr.GetComponent<Brush>().enabled = false;
-            lContr.GetComponent<LineRenderer>().enabled = false;
-            rContr.GetComponent<Brush>().enabled = false;
-            rContr.GetComponent<LineRenderer>().enabled = false;
+            rContrBrush.paintAction.action.performed -= rContrBrush.Paint;
+            rContrBrush.paintAction.action.canceled -= rContrBrush.NoPaint;
+            rContrBrush.primaryTouch.action.performed -= rContrBrush.TouchDown;
+            rContrBrush.primaryTouch.action.canceled -= rContrBrush.TouchUp;
+            rContrBrush.paintAction.action.Disable();
+
+            lContrBrush.paintAction.action.performed += lContrBrush.Paint;
+            lContrBrush.paintAction.action.canceled += lContrBrush.NoPaint;
+            lContrBrush.primaryTouch.action.performed += lContrBrush.TouchDown;
+            lContrBrush.primaryTouch.action.canceled += lContrBrush.TouchUp;
+            rContrBrush.paintAction.action.Enable();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Brush : Grabber
+public class Brush : MonoBehaviour
 {
     public GameObject brushTip;
 
@@ -13,7 +13,7 @@ public class Brush : Grabber
     public Material rangeMaterial;
     Material laserMaterial;
 
-    public int brushSize = 50;
+    public int brushSize = 75;
 
     Vector2 brushPos, lastBrushPos;
     Paintable paintable;
@@ -21,11 +21,11 @@ public class Brush : Grabber
     public InputActionProperty paintAction;
     public InputActionProperty primaryTouch;
 
-    private Renderer brushcolor;
-    private Color[] paint;
+    Renderer brushcolor;
+    Color[] paint;
     bool lastPaintedFrame;
 
-    bool buttonpress;
+    public bool buttonpress;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +40,7 @@ public class Brush : Grabber
 
         laserMaterial = laserPointer.material;
 
-        brushcolor = brushTip.GetComponent<Renderer>();
-        paint = Enumerable.Repeat(brushcolor.material.color, brushSize * brushSize).ToArray();
+        SetBrushColor(brushTip.GetComponent<Renderer>());
     }
 
     private void OnDestroy()
@@ -71,7 +70,7 @@ public class Brush : Grabber
             }
         }
 
-        if (paintAction.action.triggered)
+        if (paintAction.action.triggered && paintAction.action.enabled)
         {
             buttonpress = !buttonpress;
         }
@@ -99,6 +98,7 @@ public class Brush : Grabber
                     paintable = hit.collider.GetComponent<Paintable>();
                 }
 
+                //RenderTexture.active = paintable.renderTex;
                 brushPos = new Vector2(hit.textureCoord.x, hit.textureCoord.y);
 
                 int x = (int)(brushPos.x * paintable.size.x - (brushSize / 2));
@@ -122,6 +122,7 @@ public class Brush : Grabber
                     }
  
                     paintable.texture.Apply();
+                    paintable.renderTex = null;
                 }
 
                 lastBrushPos = new Vector2(x, y);
@@ -140,17 +141,29 @@ public class Brush : Grabber
         buttonpress = false;
     }
 
-    public override void TouchDown(InputAction.CallbackContext context)
+    public void TouchDown(InputAction.CallbackContext context)
     {
         laserPointer.enabled = true;
     }
 
-    public override void TouchUp(InputAction.CallbackContext context)
+    public void TouchUp(InputAction.CallbackContext context)
     {
         laserPointer.enabled = false;
         laserPointer.material = laserMaterial;
         paintable = null;
         lastPaintedFrame = false;
+    }
+
+    public Renderer GetBrushColor()
+    {
+        return brushcolor;
+    }
+
+    public void SetBrushColor(Renderer color)
+    {
+        brushcolor = color;
+        paint = Enumerable.Repeat(brushcolor.material.color, brushSize * brushSize).ToArray();
+        print("brush color set");
     }
 
 }

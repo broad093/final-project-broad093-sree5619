@@ -17,11 +17,11 @@ public class Grabber : MonoBehaviour
 
     public virtual void TouchDown(InputAction.CallbackContext context)
     {
-        brush.laserPointer.enabled = false;
+        //brush.laserPointer.enabled = false;
     }
 
     public virtual void TouchUp(InputAction.CallbackContext context)
     {
-        brush.laserPointer.enabled = false;
+        //brush.laserPointer.enabled = false;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Paintable : MonoBehaviour
 {
     public Texture2D texture;
+    public RenderTexture renderTex;
     public Vector2 size;
     public Material baseMaterial;
 

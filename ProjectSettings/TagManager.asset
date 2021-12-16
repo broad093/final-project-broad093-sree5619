@@ -9,6 +9,7 @@ TagManager:
   - Paintable
   - RightHand
   - LeftHand
+  - blue
   layers:
   - Default
   - TransparentFX
