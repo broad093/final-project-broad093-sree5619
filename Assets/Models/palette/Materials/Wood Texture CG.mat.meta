@@ -1,15 +1,21 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/SimpleLowPolyNature/Lowpoly Demo Post-processing Profile.asset.meta
 guid: 9437d19f191bf2b4ba962c8241b1ae9d
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
 =======
+=======
+>>>>>>> Stashed changes
 guid: c92afc5514c8e8647b487a00effdb7fd
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes:Assets/Models/palette/Materials/Wood Texture CG.mat.meta
+=======
+>>>>>>> Stashed changes
   userData: 
   assetBundleName: 
   assetBundleVariant: 

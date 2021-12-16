@@ -30,6 +30,10 @@ public class ColorChange : MonoBehaviour
             print("collision");
         }
         print(newColor);
+<<<<<<< Updated upstream
         brush.SetBrushColor(brushTip.GetComponent<Renderer>());
+=======
+        //brush.SetBrushColor(brushTip.GetComponent<Renderer>());
+>>>>>>> Stashed changes
     }
 }

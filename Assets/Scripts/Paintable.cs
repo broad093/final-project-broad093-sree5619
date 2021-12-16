@@ -18,7 +18,6 @@ public class Paintable : MonoBehaviour
 
         //baseMaterial = render.material;
         
-
         //WORKS
         baseMaterial.SetTexture("_MainTex", texture);
         render.sharedMaterial = baseMaterial;
