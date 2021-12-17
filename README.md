@@ -8,12 +8,12 @@ Name: Temay Broadway & Sree Pemma
 UMN Email: broad093@umn.edu // pemma003@umn.edu
 
 Third Party Assets:
--  Paint Palette - https://www.cgtrader.com/3d-models/sports/equipment/wooden-paint-palette
--  Paint Brush - https://www.cgtrader.com/3d-models/various/various-models/paintbrush-2bf9c244-94c9-4d42-b094-b2c78c0b250a
--  Paint Spill Liquid and Ocean - https://github.com/Nesh108/Unity_MetaBalls_Liquids
--  Sherbb's Particle Collection (paint sphere on destroy) - https://assetstore.unity.com/packages/vfx/particles/sherbb-s-particle-collection-170798
--  Simple Low Poly Nature Pack - https://assetstore.unity.com/packages/3d/environments/landscapes/simple-low-poly-nature-pack-157552
--  Lowpoly Environment Nature Pack Free - https://assetstore.unity.com/packages/3d/environments/lowpoly-environment-nature-pack-free-187052
+-  [Paint Palette](https://www.cgtrader.com/3d-models/sports/equipment/wooden-paint-palette)
+-  [Paint Brush](https://www.cgtrader.com/3d-models/various/various-models/paintbrush-2bf9c244-94c9-4d42-b094-b2c78c0b250a)
+-  [Paint Spill Liquid and Ocean](https://github.com/Nesh108/Unity_MetaBalls_Liquids)
+-  [Sherbb's Particle Collection (paint sphere on destroy)](https://assetstore.unity.com/packages/vfx/particles/sherbb-s-particle-collection-170798)
+-  [Simple Low Poly Nature Pack](https://assetstore.unity.com/packages/3d/environments/landscapes/simple-low-poly-nature-pack-157552)
+-  [Lowpoly Environment Nature Pack Free](https://assetstore.unity.com/packages/3d/environments/lowpoly-environment-nature-pack-free-187052)
 
 ## Project Overview
 For our final project, we create a treasure hunt painting exploration game. The scene begins within a blank white area with nothing aside from a paint brush and a bucket filled with blue paint. Upon interacting with the brush, one will equip it to use. If the player interacts with the blue bucket, spilling the paint, it will activate the rest of the world for the player to explore, filling in the skybox.
