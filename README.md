@@ -8,21 +8,20 @@ Name: Temay Broadway & Sree Pemma
 UMN Email: broad093@umn.edu // pemma003@umn.edu
 
 Third Party Assets:
--  
--  
+-  Paint Palette - https://www.cgtrader.com/3d-models/sports/equipment/wooden-paint-palette
+-  Paint Brush - https://www.cgtrader.com/3d-models/various/various-models/paintbrush-2bf9c244-94c9-4d42-b094-b2c78c0b250a
+-  Paint Spill Liquid and Ocean - https://github.com/Nesh108/Unity_MetaBalls_Liquids
+-  Sherbb's Particle Collection (paint sphere on destroy) - https://assetstore.unity.com/packages/vfx/particles/sherbb-s-particle-collection-170798
+-  Simple Low Poly Nature Pack - https://assetstore.unity.com/packages/3d/environments/landscapes/simple-low-poly-nature-pack-157552
+-  Lowpoly Environment Nature Pack Free - https://assetstore.unity.com/packages/3d/environments/lowpoly-environment-nature-pack-free-187052
 
 ## Project Overview
+For our final project, we create a treasure hunt painting exploration game. The scene begins within a blank white area with nothing aside from a paint brush and a bucket filled with blue paint. Upon interacting with the brush, one will equip it to use. If the player interacts with the blue bucket, spilling the paint, it will activate the rest of the world for the player to explore, filling in the skybox.
 
-Make sure to update, will fill in with initial proposal overview.
-For our final project, we would like to propose a painting exploration, treasure hunt, survival-like game. The scene begins within a blank white area with nothing aside from a paint brush and a bucket filled with blue paint. Upon interacting with the brush, one will equip it to use. If the player interacts with the blue bucket, spilling the paint, it will activate the rest of the world for the player to explore, filling in the skybox.
-
-This is the part when the floor will give in and the player will feel like they are falling down and land in a different scene. In this scene, the player will be able to see outlines of different shapes such as trees, mountains, lakes, etc. 
-
+This is the part when the player will warp into a different scene, this scene being the colorable world. In this scene, the player is dropped into the onboarding site where they can see different objects such as trees, a bridge, etc. The objects that are colored white are the ones that can be colored in. The player is equipped with a color pallete as well as a paint brush. As the player finds more colors, they are visible on the color pallete where they can be dipped into with the paint brush to be used. Colors are scattered around the map and have to be acquired in order to find the right colors for the colorable objects. Players can also explore the whole world and the different environment within it.
 
 ## Goals
-
-There are various goals required to “win” the game. The primary goal of the game is to paint your surroundings so that objects can be interacted with. Once objects can be interacted with, the player can use their surroundings to help progress in the game. Other mechanics in the game that will help the player towards their goal is collecting colors, collecting objects to help with their journey, and defeating monsters.
-
+There are two main goals in our game. The first being the player paints all objects in the surrounding that can be colorable so no white objects remain. The second goal is to explore the world and find all colors that are scattered in the scene. 
 
 ## Project Planning
 
