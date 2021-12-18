@@ -23,6 +23,8 @@ This is the part when the player will warp into a different scene, this scene be
 ## Goals
 There are two main goals in our game. The first being the player paints all objects in the surrounding that can be colorable so no white objects remain. The second goal is to explore the world and find all colors that are scattered in the scene. 
 
+In terms of game controls, to pick up the paint brush, the player has to use the grab button and upon releasing this button, the brush locks into place after rotating itself to an upright position. To perform the actual painting action, the primary button has to be pushed to paint objects. 
+
 ## Project Planning
 
 1. [Project Proposal](https://docs.google.com/document/d/1rsH7jm487dvGhBH1pjfRIxznr1u2ky4cdERGmwQGWoc/edit) on Google Drive
